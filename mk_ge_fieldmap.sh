@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
-#
-# running eddy_openmp
-# moving output to dtifit directory
 
 module load FSL/5.0.10
 
 for subject in `cat subs`
 do
-
-#trap the termination signal, and call the function 'trap_term' when
-# that happens, so results may be saved.
-
 
 cd ${subject}
 
