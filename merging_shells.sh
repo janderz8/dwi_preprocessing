@@ -15,14 +15,14 @@ for i in `cat subs.txt`
 do
 
 #copy the bvals
-#cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH331000_run-01_dwi.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b1000.bval
-#cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH333000_run-01_dwi.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b3000.bval
+cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH331000_run-01_dwi.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b1000.bval
+cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH333000_run-01_dwi.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b3000.bval
 #copy the bvecs
-#cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH331000_run-01_dwi.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b1000.bvec
-#cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH333000_run-01_dwi.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b3000.bvec
+cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH331000_run-01_dwi.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b1000.bvec
+cp /projects/janderson/PACTMD/data/bids/${i}/ses-01/dwi/*CMH333000_run-01_dwi.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_b3000.bvec
 
 #merge the bvals
-#paste -d" " /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b1000.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b3000.bval > /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_merged.bval
+paste -d" " /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b1000.bval /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b3000.bval > /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_merged.bval
 
 #merge the bvecs
-#paste -d" " /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b1000.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b3000.bvec > /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_merged.bvec
+paste -d" " /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b1000.bvec /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/*b3000.bvec > /projects/janderson/PACTMD/pipelines/dwi/${i}/ses-01/${i}_merged.bvec
