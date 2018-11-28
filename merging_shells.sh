@@ -4,7 +4,7 @@ module load FSL/5.0.11
 module load ANTS/2.1.0
 
 #The two shells of data are acquired as separate files, but need to be preprocessed together.  Use fslmerge to merge them.
-parallel -j 30 "fslmerge -t /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /projects/janderson/PACTMD/data/bids/{}/ses-01/dwi/*CMH331000_run-01_dwi.nii.gz /projects/janderson/PACTMD/data/bids/{}/ses-01/dwi/*CMH333000_run-01_dwi.nii.gz" ::: `cat subs.txt` #first merge the two shells of data
+parallel -j 30 "fslmerge -t /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /scratch/janderson/PACTMD_updated/{}/*CMH331000_run-01_dwi.nii.gz /scratch/janderson/PACTMD_updated/{}/*CMH333000_run-01_dwi.nii.gz" ::: `cat subs.txt` #first merge the two shells of data
 
 #denoise the data using mrtrix
 parallel -j 30 "dwidenoise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged_dn.nii.gz -force -noise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_noise.nii.gz" ::: `cat subs.txt` #then denoise them 
