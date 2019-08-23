@@ -5,6 +5,7 @@ Briefly, the steps we are including are:
 
 **First script**
 1) reconstruct GE fieldmap
+*note, in the future, I want to use  synthetic b0 or ANTs registration to correct distortion rather than fieldmaps which are unreliable*
 
 **Second Script**
 1) use dwidenoise (PCA based denoising) from the mrtrix package
