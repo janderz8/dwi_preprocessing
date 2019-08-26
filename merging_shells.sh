@@ -1,13 +1,14 @@
 #preprocessing
-module load MRtrix3/20180123 
+module load MRtrix3/20180123
 module load FSL/5.0.11
+#note that FSL 6.0 breaks a lot of the functionality of previous versions - don't use this!
 module load ANTS/2.1.0
 
 #The two shells of data are acquired as separate files, but need to be preprocessed together.  Use fslmerge to merge them.
 parallel -j 30 "fslmerge -t /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /scratch/janderson/PACTMD_updated/{}/*CMH331000_run-01_dwi.nii.gz /scratch/janderson/PACTMD_updated/{}/*CMH333000_run-01_dwi.nii.gz" ::: `cat subs.txt` #first merge the two shells of data
 
 #denoise the data using mrtrix
-parallel -j 30 "dwidenoise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged_dn.nii.gz -force -noise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_noise.nii.gz" ::: `cat subs.txt` #then denoise them 
+parallel -j 30 "dwidenoise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged.nii.gz /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_merged_dn.nii.gz -force -noise /projects/janderson/PACTMD/pipelines/dwi/{}/ses-01/{}_noise.nii.gz" ::: `cat subs.txt` #then denoise them
 
 #now copy the bvals and bvecs files
 
