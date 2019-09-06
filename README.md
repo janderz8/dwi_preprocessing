@@ -18,12 +18,12 @@ Briefly, the steps we are including are:
 **Fourth Script**
 1) run the NODDI algorithm.  We will be using both the mdt toolbox https://mdt-toolbox.readthedocs.io/en/latest_release/ to fit the NODDI parameters.
 2) see the **run_mdt_cuda_04.sh** script to run the multishell estimation using NVIDIA cuda acceleration.  This is so much better than the base version from MATLAB - each person's data can be estimated in ~10 minutes instead of 30-40 minutes.
-
+![Examples of NODDI parameters](https://github.com/johnaeanderson/dwi_preprocessing/blob/master/Figures/Example-images-from-model-parameters-from-NODDI-the-intracellular-volume-fraction.png)
 
 
 **Fifth Step (multiple scripts)**
 1) The first approach is to use GBSS (https://github.com/arash-n/GBSS).  Note I had to alter this substantially to get it to work.  Here are my versions of Arash Nazeri's scripts (see GBSS folder)
 
 **Sixth Step**
-1) convert the data to surface space using CIFTIFY (Erin Dickie's work).  This can be run using the transform_NODDI_To_MNI_Surface_06.sh script.  The benefits of using surface based approches are a) we can now smooth the data without fear of smudging different tissue classes into one another (thus increasing power and accuracy), and b) unlike the GBSS algorithm, we can get a more continuous estimate of the entire surface without gaps using the midthickness values.  
+1) convert the data to surface space using CIFTIFY (Erin Dickie's work).  This can be run using the transform_NODDI_To_MNI_Surface_06.sh script.  The benefits of using surface based approches are a) we can now smooth the data without fear of smudging different tissue classes into one another (thus increasing power and accuracy), and b) unlike the GBSS algorithm, we can get a more continuous estimate of the entire surface without gaps using the midthickness values.  In the figure below for example, *orientation dispersion index (ODI)* is represented by panel C.  Image is taken from *Fukutomi, H., Glasser, M. F., Zhang, H., Autio, J. A., Coalson, T. S., Okada, T., ... & Hayashi, T. (2018). Neurite imaging reveals microstructural variations in human cerebral cortical gray matter. Neuroimage, 182, 488-499.*
 ![Figure 5 from Fukatomi et al., 2018](https://github.com/johnaeanderson/dwi_preprocessing/blob/master/Figures/Fukatomi_2018.jpg)
