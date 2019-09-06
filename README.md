@@ -26,6 +26,4 @@ Briefly, the steps we are including are:
 
 **Sixth Step**
 1) convert the data to surface space using CIFTIFY (Erin Dickie's work).  This can be run using the transform_NODDI_To_MNI_Surface_06.sh script.  The benefits of using surface based approches are a) we can now smooth the data without fear of smudging different tissue classes into one another (thus increasing power and accuracy), and b) unlike the GBSS algorithm, we can get a more continuous estimate of the entire surface without gaps using the midthickness values.  
-<img src="/Figures/Fukatomi_2018.png"
-     alt="Fukatomi Figure"
-     style="float: left; margin-right: 10px;" />
+![Figure 5 from Fukatomi et al., 2018](https://github.com/johnaeanderson/dwi_preprocessing/blob/master/Figures/Fukatomi_2018.jpg)
