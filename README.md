@@ -18,6 +18,8 @@ Briefly, the steps we are including are:
 **Fourth Script**
 1) run the NODDI algorithm.  We will be using both the mdt toolbox https://mdt-toolbox.readthedocs.io/en/latest_release/ to fit the NODDI parameters.
 2) see the **run_mdt_cuda_04.sh** script to run the multishell estimation using NVIDIA cuda acceleration.  This is so much better than the base version from MATLAB - each person's data can be estimated in ~10 minutes instead of 30-40 minutes.
+*image below from: https://www.researchgate.net/profile/Ariana_Anderson/publication/283259865/figure/fig4/AS:561702509793284@1510931722192/Example-images-from-model-parameters-from-NODDI-the-intracellular-volume-fraction.png*
+
 ![Examples of NODDI parameters](https://github.com/johnaeanderson/dwi_preprocessing/blob/master/Figures/Example-images-from-model-parameters-from-NODDI-the-intracellular-volume-fraction.png)
 
 
