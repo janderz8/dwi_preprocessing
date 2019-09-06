@@ -23,6 +23,8 @@ module load FSL/5.0.11
 cd /projects/janderson/PACTMD/pipelines/dwi/`index_new`/ses-01/ #update path...
 #first use MRtrix to denoise the data
 
+#NOTE if we have already done denoising (as part of step 01, don't repeat)
+
 dwidenoise `index`_merged.nii.gz dMRI_denoise.nii.gz
 mv `index_new`_merged_dn.nii.gz dMRI_dn.nii.gz
 

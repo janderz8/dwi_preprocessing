@@ -5,6 +5,8 @@ module load FSL/5.0.10
 for subject in `cat subs`
 do
 
+#this particular code was adapted from https://github.com/TIGRLab/dmripreproc/blob/master/dmripreproc/workflows/fieldmap/fmap.py
+
 cd ${subject}
 
 #split (pre) fieldmap files
