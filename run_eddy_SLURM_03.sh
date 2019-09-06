@@ -44,7 +44,7 @@ vols=$(fslval dMRI_dn.nii.gz dim4) #pull number of volumes from dMRI header
 indx=""
 for ((i=1; i<=${vols}; i+=1)); do indx="$indx 1"; done # assumes all volumes are aquired with the same phase encoding
 echo $indx > index.txt
-
+ 
 #Use the standard bval and bvec files that exist in each subjects folder.  Strange things happen to the bval files if you use them as is...
 cat *.bval > bval.txt #bval and bvec files need to be in txt file
 cat *.bvec > bvec.txt
