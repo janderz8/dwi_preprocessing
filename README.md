@@ -1,6 +1,11 @@
 # dwi_preprocessing & data preparation
 This is the set of scripts that will be used to preprocess the NODDI data in the KIMEL lab for the PACTMD study.
 
+*To Do List*
+- [x] Add dwi preprocessing scripts to repository
+- [ ] Update all scripts to run from current directory & ensure that I can run from raw data
+- [ ] Update the surface script - make sure all participants who are eligible are included
+
 Briefly, the steps we are including are:
 
 **First Script** merging_shells_01.sh
